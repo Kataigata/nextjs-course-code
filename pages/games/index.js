@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Fragment } from "react";
 
-import AllPosts from "../../components/posts/all-posts";
-import { getAllPosts } from "../../lib/posts-util";
+import AllGames from "../../components/games/all-games";
+import { getAllGames } from "../../lib/games-util";
 
 function AllGamesPage(props) {
   return (
@@ -14,13 +14,13 @@ function AllGamesPage(props) {
           content="A list of all the games I've played for this challenge!"
         />
       </Head>
-      <AllPosts posts={props.games} />
+      <AllGames games={props.games} />
     </Fragment>
   );
 }
 
 export function getStaticProps() {
-  const allGames = getAllPosts();
+  const allGames = getAllGames();
 
   return {
     props: {
